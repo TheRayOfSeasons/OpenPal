@@ -1,7 +1,30 @@
 .form-register {
+  width: 50%;
   margin: 2rem;
+  float: right;
 }
 
 .form-control {
   margin: 1rem 0;
+}
+
+.form-dropdowns {
+  display: flex;
+}
+
+.status-dropdown {
+  margin-right: .75rem;
+}
+
+.medium-dropdown {
+  margin-left: .75rem;
+}
+
+.hide-name-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.hide-name-toggle > span {
+  margin-left: .5rem;
 }
