@@ -15,7 +15,6 @@ export class NavigationBarComponent implements OnInit {
     email: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required)
   });
-  someText = '';
 
   constructor(
     private userService: UserService,
@@ -27,11 +26,11 @@ export class NavigationBarComponent implements OnInit {
   }
 
   login() {
-    const user: any = this.userService.login(this.signin.getRawValue()).subscribe(res => this.someText = JSON.stringify(res));
-    
-    if(!user.unauthorized) {
-      this.router.navigate(['home']);
-    }
+    this.userService.login(this.signin.getRawValue()).subscribe(user =>
+    {
+      if(!user.unauthorized)
+        this.router.navigate(['home']);
+    });
   }
 
 }

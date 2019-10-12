@@ -55,7 +55,7 @@
     <!-- <textarea formControlName="lifeIssues" cols="30" rows="10" id="lifeissues"></textarea> -->
     <input formControlName="lifeIssues" id="lifeissues" class="form-control mr-sm-2" placeholder="Issues">
     <input *ngIf="hasDisplayName" formControlName="displayName" class="form-control mr-sm-2" type="text" placeholder="Display Name" id="displayname">
-    <input formControlName="hideName" type="checkbox" (change)="toggleDisplayName($event)" id="hidename">
+    <input formControlName="showName" type="checkbox" (change)="toggleDisplayName($event)" id="showname">
     <input formControlName="preferredMedium" class="form-control mr-sm-2" type="text" placeholder="Preferred Medium" id="medium">
     <input class="btn btn-primary" type="submit" value="Sign up">
 </form>

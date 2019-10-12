@@ -25,7 +25,6 @@ export class SignUpFormComponent implements OnInit {
     medium: new FormControl('')
   })
   hasDisplayName = false;
-  someText = '';
 
   constructor(private userService: UserService) { }
 
@@ -40,7 +39,6 @@ export class SignUpFormComponent implements OnInit {
   }
 
   submit() {
-    this.someText = JSON.stringify(this.signup.getRawValue());
     this.userService.createAccount(this.signup.getRawValue())
     .subscribe(res => res);
   }
