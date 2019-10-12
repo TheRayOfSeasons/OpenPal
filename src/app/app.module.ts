@@ -10,6 +10,7 @@ import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.comp
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { DisciplerCardComponent } from './components/discipler-card/discipler-card.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { DisciplerCardComponent } from './components/discipler-card/discipler-ca
     HomeComponent,
     SearchComponent,
     DisciplerCardComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

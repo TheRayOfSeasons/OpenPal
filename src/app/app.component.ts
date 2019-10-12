@@ -18,14 +18,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.router.navigate(this.userService.authenticated ? [`home/${this.userService.currentUser.id}`]: ['sign-up']);
+    this.router.navigate(this.userService.authenticated ? [`home`]: ['sign-up']);
   }
 
   login($event) {
     this.userService.authenticate(true);
     this.userService.setCurrentUser($event.user);
     this.authenticated = true;
-    this.id = this.userService.currentUser.id;
-    this.router.navigate([`home/${$event.user.id}`]);
+    this.id = $event.id;
+    this.router.navigate([`home`]);
   }
 }

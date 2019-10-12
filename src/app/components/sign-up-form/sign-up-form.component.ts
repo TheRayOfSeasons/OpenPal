@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import ValidateEmail from '../../directives/custom-validators.directive';
 import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -9,6 +10,7 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./sign-up-form.component.scss']
 })
 export class SignUpFormComponent implements OnInit {
+
   signup = new FormGroup({
     name: new FormControl(''),
     email: new FormControl('', [Validators.email]),
@@ -26,7 +28,10 @@ export class SignUpFormComponent implements OnInit {
   })
   hasDisplayName = false;
 
-  constructor(public userService: UserService) { }
+  constructor(
+    public userService: UserService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
   }
@@ -40,7 +45,12 @@ export class SignUpFormComponent implements OnInit {
 
   submit() {
     this.userService.createAccount(this.signup.getRawValue())
-    .subscribe(res => res);
+      .subscribe(res => 
+        {
+          this.router.navigate([`/home`])
+          return res;
+        });
+    
   }
 
 }

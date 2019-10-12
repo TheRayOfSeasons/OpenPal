@@ -7,7 +7,7 @@ import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [
   { path: 'sign-up', component: SignUpFormComponent },
-  { path: 'home/:id', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'search/:id', component: SearchComponent}
 ];
 

@@ -9,8 +9,8 @@ import { Router, ActivatedRoute} from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit, OnChanges {
-  user: any;
-  id: any;
+  // user: any;
+  // id: any;
 
   constructor(
     private router: Router,
@@ -18,15 +18,15 @@ export class HomeComponent implements OnInit, OnChanges {
     public userService: UserService,
     private changeDetectorRef: ChangeDetectorRef
     ) {
-      this.id = this.activatedRoute.snapshot.paramMap.get("id");
+      // this.id = this.activatedRoute.snapshot.paramMap.get("id");
       }
       
   ngOnInit() {
-    this.userService.getUserDetails(this.id).subscribe(user => this.user = user);
+    // this.userService.getUserDetails(this.id).subscribe(user => this.user = user);
   }
 
   ngOnChanges() {
-    this.changeDetectorRef.detectChanges();
+    // this.changeDetectorRef.detectChanges();
   }
 
 }

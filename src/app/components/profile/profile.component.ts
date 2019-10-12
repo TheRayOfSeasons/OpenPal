@@ -3,15 +3,13 @@ import { UserService } from '../../services/user.service';
 import { Router, ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss']
 })
-export class SearchComponent implements OnInit, OnChanges {
+export class ProfileComponent implements OnInit, OnChanges {
   user: any;
   id: any;
-  disciplers: any[];
 
   constructor(
     private router: Router,
@@ -24,7 +22,6 @@ export class SearchComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.userService.getUserDetails(this.id).subscribe(user => this.user = user);
-    this.userService.getDisciplers().subscribe(disciplers => this.disciplers = disciplers);
   }
 
   ngOnChanges() {

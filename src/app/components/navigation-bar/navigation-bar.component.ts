@@ -41,6 +41,7 @@ export class NavigationBarComponent implements OnInit, OnChanges {
     {
       if(!user.unauthorized)
       {
+        this.id = user.id;
         this.onLogin.emit({user});
       }
     });
@@ -52,6 +53,10 @@ export class NavigationBarComponent implements OnInit, OnChanges {
 
   routeLink(route: string) {
     this.router.navigate([`${route}/${this.id}`]);
+  }
+
+  routeLinkDirect(route: string) {
+    this.router.navigate([`${route}`]);
   }
 
 }
