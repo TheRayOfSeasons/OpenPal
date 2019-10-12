@@ -1,16 +1,21 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-discipler-card',
   templateUrl: './discipler-card.component.html',
-  styleUrls: ['./discipler-card.component.scss']
+  styleUrls: ['./discipler-card.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DisciplerCardComponent implements OnInit {
+export class DisciplerCardComponent implements OnInit, OnChanges {
   @Input() discipler;
 
-  constructor() { }
+  constructor(private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
+    this.changeDetectorRef.detectChanges();
   }
 
 }

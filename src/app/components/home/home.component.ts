@@ -11,6 +11,7 @@ import { Router, ActivatedRoute} from '@angular/router';
 export class HomeComponent implements OnInit, OnChanges {
   // user: any;
   // id: any;
+  disciplers: any[];
 
   constructor(
     private router: Router,
@@ -23,10 +24,15 @@ export class HomeComponent implements OnInit, OnChanges {
       
   ngOnInit() {
     // this.userService.getUserDetails(this.id).subscribe(user => this.user = user);
+    this.userService.getDisciplers().subscribe(disciplers => 
+      {
+        this.disciplers = disciplers;
+      }
+    );
   }
 
   ngOnChanges() {
-    // this.changeDetectorRef.detectChanges();
+    this.changeDetectorRef.detectChanges();
   }
 
 }
