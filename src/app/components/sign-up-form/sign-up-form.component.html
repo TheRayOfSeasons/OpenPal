@@ -27,13 +27,13 @@
         </div>
         <input *ngIf="hasDisplayName" formControlName="displayName" class="form-control mr-sm-2" type="text" placeholder="Display Name" id="displayname">
     
-        <input formControlName="age" class="form-control mr-sm-2" type="text" placeholder="Age" id="age" >
-        <div *ngIf="signup.controls.name.errors?.required"
-            class="alert alert-danger">
-            Age is Required
-        </div>
-    
-        <div class="form-dropdowns">
+        <div class="form-three-info">
+            <input formControlName="age" class="form-control" type="text" placeholder="Age" id="age" >
+            <div *ngIf="signup.controls.name.errors?.required"
+                class="alert alert-danger">
+                Age is Required
+            </div>
+
             <select formControlName="status" id="status" class="form-control status-dropdown">
                 <option value="" disabled selected>Status</option>
                 <option value="Single">Youth</option>
@@ -55,18 +55,20 @@
                 class="alert alert-danger">
                 Gender is Required
             </div>
-    
-            <select formControlName="medium" class="form-control mr-sm-2 medium-dropdown" id="medium">
-                <option value="" disabled selected>Talk through...</option>
-                <option value="Male">Personal</option>
-                <option value="Female">Facebook Messenger</option>
-                <option value="other">Voice Call</option>
-                <option value="other">Video Call</option>
-                <option value="other">SMS</option>
-                <option value="other">Phone Call</option>
-                <option value="other">WhatsApp</option>
-            </select>
         </div>
+    
+        <select formControlName="medium" class="form-control mr-sm-2" id="medium">
+            <option value="" disabled selected>Talk through...</option>
+            <option value="Male">Personal</option>
+            <option value="Female">Facebook Messenger</option>
+            <option value="other">Voice Call</option>
+            <option value="other">Video Call</option>
+            <option value="other">SMS</option>
+            <option value="other">Phone Call</option>
+            <option value="other">WhatsApp</option>
+        </select>
+        
+        <input formControlName="location" class="form-control mr-sm-2" type="text" placeholder="Location" id="location">
     
         <input formControlName="religion" class="form-control mr-sm-2" type="text" placeholder="Religion" id="religion">
         <div *ngIf="signup.controls.religion.errors?.required"
