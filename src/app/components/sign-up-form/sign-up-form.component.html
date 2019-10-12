@@ -14,11 +14,11 @@
         class="alert alert-danger">
         Password is Required
     </div>
-    <input formControlName="confirmPassword" class="form-control mr-sm-2" type="text" placeholder="Confrim Password" id="confirmpassword" >
+    <!-- <input formControlName="confirmPassword" class="form-control mr-sm-2" type="text" placeholder="Confrim Password" id="confirmpassword" >
     <div *ngIf="signup.controls.confirmpassword.errors?.required"
         class="alert alert-danger">
         Password is Required
-    </div>
+    </div> -->
     <input formControlName="age" class="form-control mr-sm-2" type="text" placeholder="Age" id="age" >
     <div *ngIf="signup.controls.name.errors?.required"
         class="alert alert-danger">
@@ -53,9 +53,9 @@
         Religion is Required
     </div>
     <!-- <textarea formControlName="lifeIssues" cols="30" rows="10" id="lifeissues"></textarea> -->
-    <input formControlName="lifeIssues" id="lifeissues" class="form-control mr-sm-2" placeholder="Issues">
+    <input formControlName="issues" id="lifeissues" class="form-control mr-sm-2" placeholder="Issues">
     <input *ngIf="hasDisplayName" formControlName="displayName" class="form-control mr-sm-2" type="text" placeholder="Display Name" id="displayname">
     <input formControlName="showName" type="checkbox" (change)="toggleDisplayName($event)" id="showname">
-    <input formControlName="preferredMedium" class="form-control mr-sm-2" type="text" placeholder="Preferred Medium" id="medium">
+    <input formControlName="medium" class="form-control mr-sm-2" type="text" placeholder="Preferred Medium" id="medium">
     <input class="btn btn-primary" type="submit" value="Sign up">
 </form>

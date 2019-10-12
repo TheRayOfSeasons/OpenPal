@@ -25,6 +25,23 @@ export class UserService {
       credentials
     );
 
+    // alert(JSON.stringify(loginState));
     return loginState.unauthorized? null : loginState;
+  }
+
+  getUserDetails(id): Observable<any> {
+    return this.http.get(`https://openpal.glitch.me/api/user/${id}`,)
+  }
+
+  setCurrentUser(id) {
+    this.currentUser = id;
+  }
+
+  authenticate(toggle: boolean) {
+    this.authenticated = toggle;
+  }
+
+  getCurrentUser(): Observable<any> {
+    return this.currentUser;
   }
 }
