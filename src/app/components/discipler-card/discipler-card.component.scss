@@ -1,0 +1,14 @@
+.card {
+    width: 15rem;
+    height: 15rem;
+    box-shadow: 2px 2px 15px #737373;
+    text-align: center;
+
+    .name {
+        font-size: 2rem;
+    }
+
+    .email {
+        font-size: 1.25rem;
+    }
+}

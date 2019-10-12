@@ -10,12 +10,6 @@
         class="alert alert-danger">
         Password is Required
     </div>
-
-    <input formControlName="confirmPassword" class="form-control mr-sm-2" type="text" placeholder="Confrim Password" id="confirmpassword" >
-    <div *ngIf="signup.controls.confirmpassword.errors?.required"
-        class="alert alert-danger">
-        Password is Required
-    </div>
     
     <input formControlName="name" class="form-control mr-sm-2" type="text" placeholder="Name" id="name" name="name">
     <div *ngIf="signup.controls.name.errors?.required"
@@ -57,7 +51,7 @@
             Gender is Required
         </div>
 
-        <select formControlName="preferredMedium" class="form-control mr-sm-2 medium-dropdown" id="medium">
+        <select formControlName="medium" class="form-control mr-sm-2 medium-dropdown" id="medium">
             <option value="" disabled selected>Communicate through...</option>
             <option value="Male">Personal</option>
             <option value="Female">Facebook Messenger</option>
@@ -76,13 +70,6 @@
     </div>
 
     <!-- <textarea formControlName="lifeIssues" cols="30" rows="10" id="lifeissues"></textarea> -->
-<<<<<<< HEAD
     <input formControlName="issues" id="lifeissues" class="form-control mr-sm-2" placeholder="Issues">
-    <input *ngIf="hasDisplayName" formControlName="displayName" class="form-control mr-sm-2" type="text" placeholder="Display Name" id="displayname">
-    <input formControlName="showName" type="checkbox" (change)="toggleDisplayName($event)" id="showname">
-    <input formControlName="medium" class="form-control mr-sm-2" type="text" placeholder="Preferred Medium" id="medium">
-=======
-    <input formControlName="lifeIssues" id="lifeissues" class="form-control mr-sm-2" placeholder="Issues">
->>>>>>> 219949806d7804dedd523fcd045e82d5d7f26425
     <input class="btn btn-primary" type="submit" value="Sign up">
 </form>
