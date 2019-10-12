@@ -27,9 +27,9 @@ export class NavigationBarComponent implements OnInit {
   }
 
   login() {
-    const user = this.userService.login(this.signin.getRawValue()).subscribe(res => this.someText = JSON.stringify(res));
+    const user: any = this.userService.login(this.signin.getRawValue()).subscribe(res => this.someText = JSON.stringify(res));
     
-    if(user != null) {
+    if(!user.unauthorized) {
       this.router.navigate(['home']);
     }
   }
