@@ -13,7 +13,7 @@
         class="alert alert-danger">
         Password is Required
     </div>
-
+    
     <input formControlName="name" class="form-control mr-sm-2" type="text" placeholder="Name" id="name" name="name">
     <div *ngIf="signup.controls.name.errors?.required"
         class="alert alert-danger">
@@ -54,15 +54,15 @@
             Gender is Required
         </div>
 
-        <select formControlName="preferredMedium" id="medium" class="form-control medium-dropdown">
-            <option disabled selected>Talk through...</option>
-            <option value="Personal">Personal</option>
-            <option value="Facebook Messenger">Facebook Messenger</option>
-            <option value="Voice Call">Voice Call</option>
-            <option value="Video Call">Video Call</option>
-            <option value="SMS">SMS</option>
-            <option value="Phone Call">Phone Call</option>
-            <option value="WhatsApp">WhatsApp</option>
+        <select formControlName="medium" class="form-control mr-sm-2 medium-dropdown" id="medium">
+            <option value="" disabled selected>Communicate through...</option>
+            <option value="Male">Personal</option>
+            <option value="Female">Facebook Messenger</option>
+            <option value="other">Voice Call</option>
+            <option value="other">Video Call</option>
+            <option value="other">SMS</option>
+            <option value="other">Phone Call</option>
+            <option value="other">WhatsApp</option>
         </select>
     </div>
 
@@ -72,6 +72,7 @@
         Religion is Required
     </div>
 
-    <input formControlName="lifeIssues" id="lifeissues" class="form-control mr-sm-2" placeholder="Issues">
-    <input class="btn btn-success" type="submit" value="Sign up">
+    <!-- <textarea formControlName="lifeIssues" cols="30" rows="10" id="lifeissues"></textarea> -->
+    <input formControlName="issues" id="lifeissues" class="form-control mr-sm-2" placeholder="Issues">
+    <input class="btn btn-primary" type="submit" value="Sign up">
 </form>

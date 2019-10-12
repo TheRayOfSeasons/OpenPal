@@ -26,7 +26,7 @@ export class SignUpFormComponent implements OnInit {
   })
   hasDisplayName = false;
 
-  constructor(private userService: UserService) { }
+  constructor(public userService: UserService) { }
 
   ngOnInit() {
   }

@@ -1,3 +1,3 @@
-<app-navigation-bar [authenticated]="authenticated"></app-navigation-bar>
+<app-navigation-bar [authenticated]="authenticated" (onLogin)="login($event)"></app-navigation-bar>
 <!-- <div class="box blue-green"></div> -->
 <router-outlet></router-outlet>

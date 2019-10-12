@@ -21,10 +21,30 @@ export class UserService {
 
   login(credentials): Observable<any> {
     const loginState: any = this.http.post(
-      `http://192.168.100.121:7777/api/user/login`,
+      `https://openpal.glitch.me/api/user/login`,
       credentials
     );
-
+      
     return loginState.unauthorized? null : loginState;
+  }
+
+  getUserDetails(id): Observable<any> {
+    return this.http.get(`https://openpal.glitch.me/api/user/${id}`,)
+  }
+
+  getDisciplers(): Observable<any> {
+    return this.http.get(`https://openpal.glitch.me/api/discipler/`);
+  }
+
+  setCurrentUser(id) {
+    this.currentUser = id;
+  }
+
+  authenticate(toggle: boolean) {
+    this.authenticated = toggle;
+  }
+
+  getCurrentUser(): Observable<any> {
+    return this.currentUser;
   }
 }

@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { SignUpFormComponent } from './components/sign-up-form/sign-up-form.component';
 import { HomeComponent } from './components/home/home.component';
+import { SearchComponent } from './components/search/search.component';
+import { DisciplerCardComponent } from './components/discipler-card/discipler-card.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { HomeComponent } from './components/home/home.component';
     NavigationBarComponent,
     SignUpFormComponent,
     HomeComponent,
+    SearchComponent,
+    DisciplerCardComponent,
   ],
   imports: [
     BrowserModule,

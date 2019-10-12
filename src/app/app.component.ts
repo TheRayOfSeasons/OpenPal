@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  authenticated = false;
-  title = 'openpal-web';
+  id: string;
+  authenticated: boolean;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    public userService: UserService
+    ) {
   }
 
   ngOnInit() {
-    this.router.navigate(this.authenticated ? ['home']: ['sign-up']);
+    this.router.navigate(this.userService.authenticated ? [`home/${this.userService.currentUser.id}`]: ['sign-up']);
+  }
+
+  login($event) {
+    this.userService.authenticate(true);
+    this.userService.setCurrentUser($event.user);
+    this.authenticated = true;
+    this.id = this.userService.currentUser.id;
+    this.router.navigate([`home/${$event.user.id}`]);
   }
 }
