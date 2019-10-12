@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import ValidateEmail from '../../directives/custom-validators.directive';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -8,23 +10,24 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class SignUpFormComponent implements OnInit {
   signup = new FormGroup({
-    name: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
-    confirmPassword: new FormControl('', Validators.required),
-    age: new FormControl('', Validators.required),
-    status: new FormControl('', Validators.required),
-    gender: new FormControl('', Validators.required),
-    religion: new FormControl('', Validators.required),
-    lifeIssues: new FormControl(''),
+    name: new FormControl(''),
+    email: new FormControl('', [Validators.email]),
+    password: new FormControl(''),
+    // confirmPassword: new FormControl(''),
+    age: new FormControl(''),
+    status: new FormControl(''),
+    gender: new FormControl(''),
+    location: new FormControl(''),
+    religion: new FormControl(''),
+    issues: new FormControl(''),
     displayName: new FormControl(''),
-    hideName: new FormControl(''),
-    preferredMedium: new FormControl('')
+    showName: new FormControl(''),
+    medium: new FormControl('')
   })
   hasDisplayName = false;
-  sometext = '';
+  someText = '';
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
   }
@@ -37,7 +40,9 @@ export class SignUpFormComponent implements OnInit {
   }
 
   submit() {
-    this.sometext = 'Hello';
+    this.someText = JSON.stringify(this.signup.getRawValue());
+    this.userService.createAccount(this.signup.getRawValue())
+    .subscribe(res => res);
   }
 
 }

@@ -1,29 +1,31 @@
 <form [formGroup]="signup" (ngSubmit)="submit()">
     <input formControlName="name" class="form-control mr-sm-2" type="text" placeholder="Name" id="name" name="name">
-    <div *ngIf="signup.controls.name.errors?.required"
+    <!-- <div *ngIf="signup.controls.name.errors?.required"
         class="alert alert-danger">
         Name is Required
-    </div>
+    </div> -->
     <input formControlName="email" class="form-control mr-sm-2" type="text" placeholder="Email" id="email" >
-    <div *ngIf="signup.controls.email.errors?.required"
+    <!-- <div *ngIf="!signup.controls.email.errors?.email"
         class="alert alert-danger">
-        Email is Required
-    </div>
+
+        <div *ngIf="">Email is Required</div>
+        <div *ngIf="">Invalid Email</div>
+    </div> -->
     <input formControlName="password" class="form-control mr-sm-2" type="text" placeholder="Password" id="password" >
-    <div *ngIf="signup.controls.password.errors?.required"
+    <!-- <div *ngIf="signup.controls.password.errors?.required"
         class="alert alert-danger">
         Password is Required
-    </div>
-    <input formControlName="confirmPassword" class="form-control mr-sm-2" type="text" placeholder="Confrim Password" id="confirmpassword" >
-    <div *ngIf="signup.controls.confirmpassword.errors?.required"
+    </div> -->
+    <!-- <input formControlName="confirmPassword" class="form-control mr-sm-2" type="text" placeholder="Confrim Password" id="confirmpassword" > -->
+    <!-- <div *ngIf="signup.controls.confirmpassword.errors?.required"
         class="alert alert-danger">
         Password is Required
-    </div>
+    </div> -->
     <input formControlName="age" class="form-control mr-sm-2" type="text" placeholder="Age" id="age" >
-    <div *ngIf="signup.controls.name.errors?.required"
+    <!-- <div *ngIf="signup.controls.name.errors?.required"
         class="alert alert-danger">
         Age is Required
-    </div>
+    </div> -->
     <select formControlName="status" id="status">
         <option value="" disabled selected>Status</option>
         <option value="single">Single</option>
@@ -31,28 +33,31 @@
         <option value="divorced">Divorced</option>
         <option value="widowed">Widowed</option>
     </select>
-    <div *ngIf="signup.controls.status.errors?.required"
+    <!-- <div *ngIf="signup.controls.status.errors?.required"
         class="alert alert-danger">
         Status is Required
-    </div>
+    </div> -->
     <select formControlName="gender" id="gender">
         <option value="" disabled selected>Gender</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
         <option value="other">Other</option>
     </select>
-    <div *ngIf="signup.controls.gender.errors?.required"
+    <input formControlName="location" class="form-control mr-sm-2" type="text" placeholder="Location" id="location">
+    
+    <!-- <div *ngIf="signup.controls.gender.errors?.required"
         class="alert alert-danger">
         Gender is Required
-    </div>
+    </div> -->
     <input formControlName="religion" class="form-control mr-sm-2" type="text" placeholder="Religion" id="religion">
-    <div *ngIf="signup.controls.religion.errors?.required"
+    <!-- <div *ngIf="signup.controls.religion.errors?.required"
         class="alert alert-danger">
         Religion is Required
-    </div>
-    <textarea formControlName="lifeIssues" cols="30" rows="10" id="lifeissues"></textarea>
+    </div> -->
+    <textarea formControlName="issues" cols="30" rows="10" id="issues"></textarea>
     <input *ngIf="hasDisplayName" formControlName="displayName" class="form-control mr-sm-2" type="text" placeholder="Display Name" id="displayname">
-    <input formControlName="hideName" type="checkbox" (change)="toggleDisplayName($event)" id="hidename">
-    <input formControlName="preferredMedium" class="form-control mr-sm-2" type="text" placeholder="Preferred Medium" id="medium">
+    <input formControlName="showName" type="checkbox" (change)="toggleDisplayName($event)" id="hidename">
+    <input formControlName="medium" class="form-control mr-sm-2" type="text" placeholder="Preferred Medium" id="medium">
     <input type="submit" value="Sign up">
 </form>
+{{ someText }}

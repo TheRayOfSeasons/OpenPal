@@ -14,6 +14,6 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.router.navigate(this.authenticated ? ['']: ['sign-up']);
+    this.router.navigate(this.authenticated ? ['home']: ['sign-up']);
   }
 }
