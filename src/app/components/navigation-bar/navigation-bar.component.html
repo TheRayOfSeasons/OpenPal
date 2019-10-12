@@ -15,10 +15,11 @@
         </ul>
         <ul *ngIf="!authenticated" class="navbar-nav mr-auto">
         </ul>
-        <form [formGroup]="signin" class="form-inline my-2 my-lg-0" (onSubmit)="login()">
+        <form [formGroup]="signin" class="form-inline my-2 my-lg-0" (ngSubmit)="login()">
             <input formControlName="email" class="form-control mr-sm-2" type="text" placeholder="email" >
             <input formControlName="password" class="form-control mr-sm-2" type="password" placeholder="password">
             <input type="submit" value="Sign In">
         </form>
     </div>
 </nav>
+{{ someText }}
