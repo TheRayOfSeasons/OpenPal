@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
 
@@ -8,7 +8,7 @@ import { User } from '../models/user';
 })
 export class UserService {
   authenticated: boolean;
-  userID: string = null;
+  currentUser = null;
 
   constructor(private http: HttpClient) { }
 
@@ -20,9 +20,11 @@ export class UserService {
   }
 
   login(credentials): Observable<any> {
-    return this.http.post(
-      `https://openpal.glitch.me/api/user/login`,
+    const loginState: any = this.http.post(
+      `http://192.168.100.121:7777/api/user/login`,
       credentials
-    )
+    );
+
+    return loginState.unauthorized? null : loginState;
   }
 }
