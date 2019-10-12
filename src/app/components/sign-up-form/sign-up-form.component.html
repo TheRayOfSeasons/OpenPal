@@ -1,78 +1,81 @@
-<form [formGroup]="signup" (ngSubmit)="submit()" class="form-register">
+<div class="form-container">
+    <video class="form-bg" src="assets/bg.mp4" poster="assets/bg_poster.jpg" autoplay loop></video>
+    <form [formGroup]="signup" (ngSubmit)="submit()" class="form-register">
+
+        <h3 class="form-title">Sign up and get connected to someone</h3>
+        <hr>
     
-    <h3>Sign up and get connected to someone</h3>
-    <hr>
-
-    <input formControlName="email" class="form-control mr-sm-2" type="text" placeholder="Email" id="email" >
-    <div *ngIf="signup.controls.email.errors?.required" class="alert alert-danger">
-        Email is Required
-    </div>
-
-    <input formControlName="password" class="form-control mr-sm-2" type="password" placeholder="Password" id="password" >
-    <div *ngIf="signup.controls.password.errors?.required"
-        class="alert alert-danger">
-        Password is Required
-    </div>
+        <input formControlName="email" class="form-control mr-sm-2" type="text" placeholder="Email" id="email" >
+        <div *ngIf="signup.controls.email.errors?.required" class="alert alert-danger">
+            Email is Required
+        </div>
     
-    <input formControlName="name" class="form-control mr-sm-2" type="text" placeholder="Name" id="name" name="name">
-    <div *ngIf="signup.controls.name.errors?.required"
-        class="alert alert-danger">
-        Name is Required
-    </div>
-    <div class="hide-name-toggle">
-        <input formControlName="showName" type="checkbox" (change)="toggleDisplayName($event)" id="showname">
-        <span>Hide my name</span>
-    </div>
-    <input *ngIf="hasDisplayName" formControlName="displayName" class="form-control mr-sm-2" type="text" placeholder="Display Name" id="displayname">
-
-    <input formControlName="age" class="form-control mr-sm-2" type="text" placeholder="Age" id="age" >
-    <div *ngIf="signup.controls.name.errors?.required"
-        class="alert alert-danger">
-        Age is Required
-    </div>
-
-    <div class="form-dropdowns">
-        <select formControlName="status" id="status" class="form-control status-dropdown">
-            <option value="" disabled selected>Status</option>
-            <option value="Single">Youth</option>
-            <option value="married">Single</option>
-            <option value="divorced">Professional</option>
-            <option value="widowed">Married</option>
-        </select>
-        <div *ngIf="signup.controls.status.errors?.required"
+        <input formControlName="password" class="form-control mr-sm-2" type="password" placeholder="Password" id="password" >
+        <div *ngIf="signup.controls.password.errors?.required"
             class="alert alert-danger">
-            Status is Required
+            Password is Required
         </div>
-        <select formControlName="gender" id="gender" class="form-control">
-            <option value="" disabled selected>Gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Other">Other</option>
-        </select>
-        <div *ngIf="signup.controls.gender.errors?.required"
+        
+        <input formControlName="name" class="form-control mr-sm-2" type="text" placeholder="Name" id="name" name="name">
+        <div *ngIf="signup.controls.name.errors?.required"
             class="alert alert-danger">
-            Gender is Required
+            Name is Required
         </div>
-
-        <select formControlName="medium" class="form-control mr-sm-2 medium-dropdown" id="medium">
-            <option value="" disabled selected>Talk through...</option>
-            <option value="Male">Personal</option>
-            <option value="Female">Facebook Messenger</option>
-            <option value="other">Voice Call</option>
-            <option value="other">Video Call</option>
-            <option value="other">SMS</option>
-            <option value="other">Phone Call</option>
-            <option value="other">WhatsApp</option>
-        </select>
-    </div>
-
-    <input formControlName="religion" class="form-control mr-sm-2" type="text" placeholder="Religion" id="religion">
-    <div *ngIf="signup.controls.religion.errors?.required"
-        class="alert alert-danger">
-        Religion is Required
-    </div>
-
-    <!-- <textarea formControlName="lifeIssues" cols="30" rows="10" id="lifeissues"></textarea> -->
-    <input formControlName="issues" id="lifeissues" class="form-control mr-sm-2" placeholder="Issues">
-    <input class="btn btn-success" type="submit" value="Sign up">
-</form>
+        <div class="hide-name-toggle">
+            <input formControlName="showName" type="checkbox" (change)="toggleDisplayName($event)" id="showname">
+            <span>Hide my name</span>
+        </div>
+        <input *ngIf="hasDisplayName" formControlName="displayName" class="form-control mr-sm-2" type="text" placeholder="Display Name" id="displayname">
+    
+        <input formControlName="age" class="form-control mr-sm-2" type="text" placeholder="Age" id="age" >
+        <div *ngIf="signup.controls.name.errors?.required"
+            class="alert alert-danger">
+            Age is Required
+        </div>
+    
+        <div class="form-dropdowns">
+            <select formControlName="status" id="status" class="form-control status-dropdown">
+                <option value="" disabled selected>Status</option>
+                <option value="Single">Youth</option>
+                <option value="married">Single</option>
+                <option value="divorced">Professional</option>
+                <option value="widowed">Married</option>
+            </select>
+            <div *ngIf="signup.controls.status.errors?.required"
+                class="alert alert-danger">
+                Status is Required
+            </div>
+            <select formControlName="gender" id="gender" class="form-control">
+                <option value="" disabled selected>Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <div *ngIf="signup.controls.gender.errors?.required"
+                class="alert alert-danger">
+                Gender is Required
+            </div>
+    
+            <select formControlName="medium" class="form-control mr-sm-2 medium-dropdown" id="medium">
+                <option value="" disabled selected>Talk through...</option>
+                <option value="Male">Personal</option>
+                <option value="Female">Facebook Messenger</option>
+                <option value="other">Voice Call</option>
+                <option value="other">Video Call</option>
+                <option value="other">SMS</option>
+                <option value="other">Phone Call</option>
+                <option value="other">WhatsApp</option>
+            </select>
+        </div>
+    
+        <input formControlName="religion" class="form-control mr-sm-2" type="text" placeholder="Religion" id="religion">
+        <div *ngIf="signup.controls.religion.errors?.required"
+            class="alert alert-danger">
+            Religion is Required
+        </div>
+    
+        <!-- <textarea formControlName="lifeIssues" cols="30" rows="10" id="lifeissues"></textarea> -->
+        <input formControlName="issues" id="lifeissues" class="form-control mr-sm-2" placeholder="Issues">
+        <input class="btn btn-success float-right" type="submit" value="Sign up">
+    </form>
+</div>

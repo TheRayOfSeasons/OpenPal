@@ -1,8 +1,22 @@
+.form-container {
+  overflow-y: hidden;
+}
+
+.form-bg {
+  position: absolute;
+  width: 100%;
+}
+
 .form-register {
-  width: 35%;
-  margin: 2rem;
-  margin-right: 10%;
+  color: #ddd;
+  position: relative;
+  width: 33%;
+  margin: 2rem 5%;
   float: right;
+}
+
+.form-title {
+  font-size: 1.6rem;
 }
 
 .form-control {
