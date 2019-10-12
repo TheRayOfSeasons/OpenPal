@@ -1,22 +1,19 @@
 <form [formGroup]="signup" (ngSubmit)="submit()" class="form-register">
     
+    <h2>Register</h2>
+    <hr>
+
     <input formControlName="email" class="form-control mr-sm-2" type="text" placeholder="Email" id="email" >
     <div *ngIf="signup.controls.email.errors?.required" class="alert alert-danger">
         Email is Required
     </div>
 
-    <input formControlName="password" class="form-control mr-sm-2" type="text" placeholder="Password" id="password" >
+    <input formControlName="password" class="form-control mr-sm-2" type="password" placeholder="Password" id="password" >
     <div *ngIf="signup.controls.password.errors?.required"
         class="alert alert-danger">
         Password is Required
     </div>
 
-    <input formControlName="confirmPassword" class="form-control mr-sm-2" type="text" placeholder="Confrim Password" id="confirmpassword" >
-    <div *ngIf="signup.controls.confirmpassword.errors?.required"
-        class="alert alert-danger">
-        Password is Required
-    </div>
-    
     <input formControlName="name" class="form-control mr-sm-2" type="text" placeholder="Name" id="name" name="name">
     <div *ngIf="signup.controls.name.errors?.required"
         class="alert alert-danger">
@@ -50,22 +47,22 @@
             <option value="" disabled selected>Gender</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
-            <option value="other">Other</option>
+            <option value="Other">Other</option>
         </select>
         <div *ngIf="signup.controls.gender.errors?.required"
             class="alert alert-danger">
             Gender is Required
         </div>
 
-        <select formControlName="preferredMedium" class="form-control mr-sm-2 medium-dropdown" id="medium">
-            <option value="" disabled selected>Communicate through...</option>
-            <option value="Male">Personal</option>
-            <option value="Female">Facebook Messenger</option>
-            <option value="other">Voice Call</option>
-            <option value="other">Video Call</option>
-            <option value="other">SMS</option>
-            <option value="other">Phone Call</option>
-            <option value="other">WhatsApp</option>
+        <select formControlName="preferredMedium" id="medium" class="form-control medium-dropdown">
+            <option disabled selected>Talk through...</option>
+            <option value="Personal">Personal</option>
+            <option value="Facebook Messenger">Facebook Messenger</option>
+            <option value="Voice Call">Voice Call</option>
+            <option value="Video Call">Video Call</option>
+            <option value="SMS">SMS</option>
+            <option value="Phone Call">Phone Call</option>
+            <option value="WhatsApp">WhatsApp</option>
         </select>
     </div>
 
@@ -75,7 +72,6 @@
         Religion is Required
     </div>
 
-    <!-- <textarea formControlName="lifeIssues" cols="30" rows="10" id="lifeissues"></textarea> -->
     <input formControlName="lifeIssues" id="lifeissues" class="form-control mr-sm-2" placeholder="Issues">
-    <input class="btn btn-primary" type="submit" value="Sign up">
+    <input class="btn btn-success" type="submit" value="Sign up">
 </form>
