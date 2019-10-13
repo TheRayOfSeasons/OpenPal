@@ -5,9 +5,14 @@
 
     .name {
         font-size: 2rem;
+        color: #002da8;
     }
 
     .email {
         font-size: 1.25rem;
+    }
+
+    &:hover {
+        box-shadow: 2px 2px 3px 1px rgb(221, 221, 221);
     }
 }

@@ -28,4 +28,11 @@ export class AppComponent implements OnInit {
     this.id = $event.id;
     this.router.navigate([`home`]);
   }
+
+  logout($event) {
+    this.userService.authenticate(false);
+    this.userService.setCurrentUser(null);
+    this.authenticated = false;
+    this.id = null;
+  }
 }

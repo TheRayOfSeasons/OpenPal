@@ -21,6 +21,7 @@ export class NavigationBarComponent implements OnInit, OnChanges {
   @Input() authenticated;
   @Input() id;
   @Output() onLogin = new EventEmitter();
+  @Output() logout = new EventEmitter();
 
   signin = new FormGroup({
     email: new FormControl('', Validators.required),
@@ -57,6 +58,11 @@ export class NavigationBarComponent implements OnInit, OnChanges {
 
   routeLinkDirect(route: string) {
     this.router.navigate([`${route}`]);
+  }
+
+  redirectToLanding() {
+    this.router.navigate(['sign-up']);
+    this.logout.emit();
   }
 
 }
