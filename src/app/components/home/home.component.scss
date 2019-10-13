@@ -1,5 +1,12 @@
 .content {
+    width: 100vw;
     display: flex;
-    flex-wrap: row wrap;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.home-bg {
+    position: fixed;
+    width: 100vw;
+    overflow: hidden;
 }

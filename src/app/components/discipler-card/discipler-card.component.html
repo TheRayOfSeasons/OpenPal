@@ -1,4 +1,11 @@
 <div class="card">
-    <div class="name">{{ discipler.name }}</div>
+    <div class="name">{{ discipler.name[0].toUpperCase() + discipler.name.substr(1) }}</div>
     <div class="email">{{ discipler.email }}</div>
+    <div class="age">
+        <span class="gender">{{ discipler.age }}, {{ discipler.gender }}</span>
+    </div>
+    <div class="age">{{ discipler.location }}</div>
+    <br>
+    <div class="age">Status: {{ discipler.status }}</div>
+    <div class="age">Contact via: {{ discipler.medium }}</div>
 </div>
